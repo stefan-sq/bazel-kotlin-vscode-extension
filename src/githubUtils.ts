@@ -1,12 +1,12 @@
-import * as path from "path";
 import * as fs from "fs";
-import * as yauzl from "yauzl";
+import * as path from "path";
 import { Progress } from "vscode";
+import * as yauzl from "yauzl";
 import {
+  ASPECT_ASSET_NAMES,
   ASPECT_RELEASES,
   AspectReleaseInfo,
   KLS_RELEASE_ARCHIVE_SHA256,
-  ASPECT_ASSET_NAMES,
 } from "./constants";
 import { deleteDirectoryContents } from "./dirUtils";
 
@@ -272,7 +272,7 @@ export async function downloadAspectReleaseArchive(
       },
       aspectRelease.sha256
     );
-  
+
     // Extract archive
     progress.report({ message: "Extracting aspect for Kotlin LSP..." });
     await extractZip(zipBuffer, path.join(destPath, bazelVersion));

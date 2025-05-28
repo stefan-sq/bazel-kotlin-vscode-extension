@@ -1,19 +1,19 @@
 // The module 'vscode' contains the VS Code extensibility API
 // Import the module and reference it with the alias vscode in your code below
-import * as vscode from "vscode";
 import * as cp from "child_process";
-import * as path from "path";
 import * as fs from "fs";
-import { downloadAspectReleaseArchive } from "./githubUtils";
-import { ConfigurationManager, BazelKLSConfig } from "./config";
-import { KotlinLanguageClient, configureLanguage } from "./languageClient";
-import { KotestTestController } from "./kotest";
+import * as path from "path";
+import * as vscode from "vscode";
 import { getBazelAspectArgs, getBazelMajorVersion, getToolTag } from "./bazelUtils";
+import { BazelKLSConfig, ConfigurationManager } from "./config";
 import { ASPECT_RELEASE_VERSION } from "./constants";
 import {
-  KotlinBazelDebugConfigurationProvider,
   KotlinBazelDebugAdapterFactory,
+  KotlinBazelDebugConfigurationProvider,
 } from "./debugAdapter";
+import { downloadAspectReleaseArchive } from "./githubUtils";
+import { KotestTestController } from "./kotest";
+import { KotlinLanguageClient, configureLanguage } from "./languageClient";
 
 let kotlinClient: KotlinLanguageClient;
 let kotestController: KotestTestController;
