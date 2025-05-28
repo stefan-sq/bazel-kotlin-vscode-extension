@@ -1,4 +1,4 @@
-load("@io_bazel_rules_kotlin//kotlin/internal:defs.bzl", "KtJvmInfo")
+load("@rules_kotlin//kotlin/internal:defs.bzl", "KtJvmInfo")
 load(":providers.bzl", "KotlinLSPStdLibInfo", "KotlinLspInfo")
 
 _SUPPORTED_RULE_KINDS = [
@@ -176,7 +176,7 @@ kotlin_lsp_aspect = aspect(
     This aspect collects classpath entries for all dependencies of JVM targets as a proto json file which can be consumed by downstream systems like a language server after a build"
     """,
     toolchains = [
-        "@io_bazel_rules_kotlin//kotlin/internal:kt_toolchain_type",
+        "@rules_kotlin//kotlin/internal:kt_toolchain_type",
     ],
     attrs = {
         "_lsp_info_extractor": attr.label(

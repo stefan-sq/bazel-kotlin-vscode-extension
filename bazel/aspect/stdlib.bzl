@@ -1,7 +1,7 @@
 load(":providers.bzl", "KotlinLSPStdLibInfo")
 
 def _stdlib_to_bin_impl(ctx):
-    jvm_stdlibs = ctx.toolchains["@io_bazel_rules_kotlin//kotlin/internal:kt_toolchain_type"].jvm_stdlibs
+    jvm_stdlibs = ctx.toolchains["@rules_kotlin//kotlin/internal:kt_toolchain_type"].jvm_stdlibs
 
     outputs = []
     output_compile_jar = None
@@ -28,6 +28,6 @@ stdlib_to_bin = rule(
     implementation = _stdlib_to_bin_impl,
     doc = "Copies the kotlin stdlib jars to the output tree to make it available to the aspect to include it in the classpath",
     toolchains = [
-        "@io_bazel_rules_kotlin//kotlin/internal:kt_toolchain_type",
+        "@rules_kotlin//kotlin/internal:kt_toolchain_type",
     ],
 )

@@ -5,7 +5,6 @@ module(
 bazel_dep(
     name = "rules_kotlin",
     version = "1.9.0",
-    repo_name = "io_bazel_rules_kotlin",
 )
 bazel_dep(name = "rules_jvm_external", version = "6.5")
 
